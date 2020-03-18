@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Citations</title>
+  <meta name="description" content="supplemental computations for Animals v. Machines manuscript">
+
+  <link rel="canonical" href="http://faculty.washington.edu/sburden/avm/content/citations.html">
+  <link rel="alternate" type="application/rss+xml" title="Animals v. Machines" href="http://faculty.washington.edu/sburden/avm/feed.xml">
+
+  <meta property="og:url"         content="http://faculty.washington.edu/sburden/avm/content/citations.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Citations" />
+<meta property="og:description" content="supplemental computations for Animals v. Machines manuscript" />
+<meta property="og:image"       content="" />
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage":
+    "http://faculty.washington.edu/sburden/avm/content/citations.html",
+  "headline":
+    "Citations",
+  "datePublished":
+    "2020-01-10T14:06:44-08:00",
+  "dateModified":
+    "2020-01-10T14:06:44-08:00",
+  "description":
+    "supplemental computations for Animals v. Machines manuscript",
+  "author": {
+    "@type": "Person",
+    "name": "T Libby, HL More, SA Burden, JM Donelan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://faculty.washington.edu/sburden/avm",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://faculty.washington.edu/sburden/avm",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/sburden/avm/assets/css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css ">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/sburden/avm/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    CommonHTML: {
+        linebreaks: {
+            automatic: true,
+        },
+    },
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML' async></script>
+
+  <!-- DOM updating function -->
+  <script>
+const runWhenDOMLoaded = cb => {
+  if (document.readyState != 'loading') {
+    cb()
+  } else if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', cb)
+  } else {
+    document.attachEvent('onreadystatechange', function() {
+      if (document.readyState == 'complete') cb()
+    })
+  }
+}
+
+// Helper function to init things quickly
+initFunction = function(myfunc) {
+  runWhenDOMLoaded(myfunc);
+  document.addEventListener('turbolinks:load', myfunc);
+};
+</script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '/sburden/avm';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="/sburden/avm/assets/js/anchor.min.js"  type="text/javascript"></script>
+  <script>
+
+initFunction(function () {
+    anchors.add("main h1, main h2, main h3, main h4")
+});
+
+</script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="/sburden/avm/assets/js/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+
+  <!-- Load the auto-generating TOC -->
+  <script src="/sburden/avm/assets/js/tocbot.min.js"  type="text/javascript"></script>
+  <script>
+var initToc = function () {
+  tocbot.init({
+    tocSelector: 'nav.onthispage',
+    contentSelector: '.c-textbook__content',
+    headingSelector: 'h2, h3',
+    orderedList: false,
+    collapseDepth: 6,
+    listClass: 'toc__menu',
+    activeListItemClass: "",  // Not using
+    activeLinkClass: "", // Not using
+  });
+  tocbot.refresh();
+}
+initFunction(initToc);
+</script>
+
+  <!-- Google analytics -->
+  <script src="/sburden/avm/assets/js/ga.js" async></script>
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" async></script>
+
+  <!-- Load JS that depends on site variables -->
+  <script>
+/**
+ * Set up copy/paste for code blocks
+ */
+const codeCellId = index => `codecell${index}`
+
+const clipboardButton = id =>
+  `<a id="copy-button-${id}" class="btn copybtn o-tooltip--left" data-tooltip="Copy" data-clipboard-target="#${id}">
+    <img src="/sburden/avm/assets/images/copy-button.svg" alt="Copy to clipboard">
+  </a>`
+
+// Clears selected text since ClipboardJS will select the text when copying
+const clearSelection = () => {
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges()
+  } else if (document.selection) {
+    document.selection.empty()
+  }
+}
+
+// Changes tooltip text for two seconds, then changes it back
+const temporarilyChangeTooltip = (el, newText) => {
+  const oldText = el.getAttribute('data-tooltip')
+  el.setAttribute('data-tooltip', newText)
+  setTimeout(() => el.setAttribute('data-tooltip', oldText), 2000)
+}
+
+const addCopyButtonToCodeCells = () => {
+  // If ClipboardJS hasn't loaded, wait a bit and try again. This
+  // happens because we load ClipboardJS asynchronously.
+  if (window.ClipboardJS === undefined) {
+    setTimeout(addCopyButtonToCodeCells, 250)
+    return
+  }
+
+  const codeCells = document.querySelectorAll('div.c-textbook__content > div.highlighter-rouge > div.highlight > pre, div.input_area pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("copy-button" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', clipboardButton(id));
+    }
+  })
+
+  const clipboard = new ClipboardJS('.copybtn')
+  clipboard.on('success', event => {
+    clearSelection()
+    temporarilyChangeTooltip(event.trigger, 'Copied!')
+  })
+
+  clipboard.on('error', event => {
+    temporarilyChangeTooltip(event.trigger, 'Failed to copy')
+  })
+
+  // Get rid of clipboard before the next page visit to avoid memory leak
+  document.addEventListener('turbolinks:before-visit', () =>
+    clipboard.destroy()
+  )
+}
+
+initFunction(addCopyButtonToCodeCells);
+</script>
+
+
+  <!-- Hide cell code -->
+  <script>
+    /**
+    Add buttons to hide code cells
+    */
+
+
+    var setCodeCellVisibility = function (inputField, kind) {
+        // Update the image and class for hidden
+        var id = inputField.getAttribute('data-id');
+        var codeCell = document.querySelector(`#${id} div.highlight`);
+
+        if (kind === "visible") {
+            codeCell.classList.remove('hidden');
+            inputField.checked = true;
+        } else {
+            codeCell.classList.add('hidden');
+            inputField.checked = false;
+        }
+    }
+
+    var toggleCodeCellVisibility = function (event) {
+        // The label is clicked, and now we decide what to do based on the input field's clicked status
+        if (event.target.tagName === "LABEL") {
+            var inputField = event.target.previousElementSibling;
+        } else {
+            // It is the span inside the target
+            var inputField = event.target.parentElement.previousElementSibling;
+        }
+
+        if (inputField.checked === true) {
+            setCodeCellVisibility(inputField, "visible");
+        } else {
+            setCodeCellVisibility(inputField, "hidden");
+        }
+    }
+
+
+    // Button constructor
+    const hideCodeButton = id => `<input class="hidebtn" type="checkbox" id="hidebtn${id}" data-id="${id}"><label title="Toggle cell" for="hidebtn${id}" class="plusminus"><span class="pm_h"></span><span class="pm_v"></span></label>`
+
+    var addHideButton = function () {
+        // If a hide button is already added, don't add another
+        if (document.querySelector('div.hidecode input') !== null) {
+            return;
+        }
+
+        // Find the input cells and add a hide button
+        document.querySelectorAll('div.input_area').forEach(function (item, index) {
+            if (!item.classList.contains("hidecode")) {
+                // Skip the cell if it doesn't have a hidecode class
+                return;
+            }
+
+            const id = codeCellId(index)
+            item.setAttribute('id', id);
+            // Insert the button just inside the end of the next div
+            item.querySelector('div').insertAdjacentHTML('beforeend', hideCodeButton(id))
+
+            // Set up the visibility toggle
+            hideLink = document.querySelector(`#${id} div.highlight + input + label`);
+            hideLink.addEventListener('click', toggleCodeCellVisibility)
+        });
+    }
+
+
+    // Initialize the hide buttos
+    var initHiddenCells = function () {
+        // Add hide buttons to the cells
+        addHideButton();
+
+        // Toggle the code cells that should be hidden
+        document.querySelectorAll('div.hidecode input').forEach(function (item) {
+            setCodeCellVisibility(item, 'hidden');
+            item.checked = true;
+        })
+    }
+
+    initFunction(initHiddenCells);
+
+</script>
+
+  <!-- Load custom website scripts -->
+  <script src="/sburden/avm/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/sburden/avm/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/sburden/avm/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="/sburden/avm/assets/js/lunr/lunr.min.js" type="text/javascript"></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="/intro"><img src="/sburden/avm/images/logo/avm.jpg" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">Animals v. Machines</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/sburden/avm/home.html"
+        >
+          
+          Home
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/sburden/avm/comm_ctrl.html"
+        >
+          
+          Communication & Control
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry c-sidebar__entry--active"
+          href="/sburden/avm/citations.html"
+        >
+          
+          Citations
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+        <li><h2 class="c-sidebar__title">Demo textbook</li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/sburden/avm/features/features.html"
+        >
+          
+          Features and customization
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/sburden/avm/features/markdown.html"
+                >
+                  
+                  Markdown files
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/sburden/avm/features/notebooks.html"
+                >
+                  
+                  Jupyter notebooks
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a></p>
+</nav>
+
+      
+      <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+      <aside class="sidebar__right">
+          <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+          <nav class="onthispage">
+          </nav>
+      </aside>
+      
+      <main class="c-textbook__page" tabindex="-1">
+          <div class="o-wrapper">
+            <div class="c-sidebar-toggle">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <button
+    id="js-sidebar-toggle"
+    class="hamburger hamburger--arrowalt is-active"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    <span class="c-sidebar-toggle__label">Toggle Sidebar</span>
+  </button>
+</div>
+
+            
+
+            <div class="c-textbook__content">
+              <h1 id="citations">Citations</h1>
+
+<p>To include citations:</p>
+
+<ol>
+  <li>Modify the file in <code class="highlighter-rouge">_bibliography/references.bib</code>.</li>
+  <li>
+    <p>In your content, add the following text to include a citation</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% cite bibtex_cite_key %}
+</code></pre></div>    </div>
+    <p>For example, the text <code class="highlighter-rouge">{% cite Perge2012-vm %}</code> generates the citation <a class="citation" href="#Perge2012-vm">(Perge, Niven, Mugnaini, Balasubramanian, &amp; Sterling, 2012)</a>.</p>
+
+    <p>You can also include multiple citations in one go –  <code class="highlighter-rouge">{% cite Perge2012-vm MacKay1952-om %}</code> generates <a class="citation" href="#Perge2012-vm">(Perge, Niven, Mugnaini, Balasubramanian, &amp; Sterling, 2012; MacKay &amp; McCulloch, 1952)</a>.</p>
+  </li>
+  <li>
+    <p>Generate a bibliography on your page using the following text:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% bibliography %}
+</code></pre></div>    </div>
+
+    <p>This will generate a bibliography for your entire BibTeX file; to list only the citations that appear on the current page, use the following syntax:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% bibliography --cited %}
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="references-cited">References cited</h1>
+
+<ol class="bibliography"><li><span id="Perge2012-vm">Perge, J. a, Niven, J. E., Mugnaini, E., Balasubramanian, V., &amp; Sterling, P. (2012). Why Do Axons Differ in Caliber? <i>The Journal of Neuroscience: the Official Journal of the Society
+              for Neuroscience</i>, <i>32</i>(2), 626–638. https://doi.org/10.1523/?JNEUROSCI.4254-11.2012</span></li>
+<li><span id="MacKay1952-om">MacKay, D. M., &amp; McCulloch, W. S. (1952). The limiting information capacity of a neuronal link. <i>The Bulletin of Mathematical Biophysics</i>, <i>14</i>(2), 127–135. https://doi.org/10.1007/BF02477711</span></li></ol>
+
+<h1 id="all-references">All references</h1>
+
+<ol class="bibliography"><li><span id="Pei2019-rv">Pei, J., Deng, L., Song, S., Zhao, M., Zhang, Y., Wu, S., … Shi, L. (2019). Towards artificial general intelligence with hybrid Tianjic chip
+              architecture. <i>Nature</i>, <i>572</i>(7767), 106–111. https://doi.org/10.1038/s41586-019-1424-8</span></li>
+<li><span id="Van_Schaik2011-of">van Schaik, C. P., &amp; Burkart, J. M. (2011). Social learning and evolution: the cultural intelligence
+               hypothesis. <i>Philosophical Transactions of the Royal Society of London.
+               Series B, Biological Sciences</i>, <i>366</i>(1567), 1008–1016. https://doi.org/10.1098/rstb.2010.0304</span></li>
+<li><span id="Herrmann2007-fe">Herrmann, E., Call, J., Hernàndez-Lloreda, M. V., Hare, B., &amp; Tomasello, M. (2007). Humans have evolved specialized skills of social cognition: the
+               cultural intelligence hypothesis. <i>Science</i>, <i>317</i>(5843), 1360–1366. https://doi.org/10.1126/science.1146282</span></li>
+<li><span id="Sallet2011-ca">Sallet, J., Mars, R. B., Noonan, M. P., Andersson, J. L., O’Reilly, J. X., Jbabdi, S., … Rushworth, M. F. S. (2011). Social network size affects neural circuits in macaques. <i>Science</i>, <i>334</i>(6056), 697–700. https://doi.org/10.1126/science.1210027</span></li>
+<li><span id="Byrne1996-mi">Byrne, R. W. (1996). Machiavellian intelligence. <i>Evolutionary Anthropology: Issues, News, and Reviews: Issues,
+               News, and Reviews</i>, <i>5</i>(5), 172–180. Retrieved from https://onlinelibrary.wiley.com/doi/abs/10.1002/(SICI)1520-6505(1996)5:5%3C172::AID-EVAN6%3E3.0.CO;2-H?casa_token=uOV4rYcHdgQAAAAA:_QHoK8A1L8csQdrkzcLhNMFPzdiEesiQXne9BDReLosRdayb3UEC89SmlUIqlY8zI-JHtTOnWURBbQ</span></li>
+<li><span id="Miller2011-pw">Miller, G. (2011). Neuroscience. The brain’s social network. <i>Science</i>, <i>334</i>(6056), 578–579. https://doi.org/10.1126/science.334.6056.578</span></li>
+<li><span id="Brenner2011-fs">Brenner, S., &amp; Sejnowski, T. J. (2011). Understanding the human brain. <i>Science</i>, <i>334</i>(6056), 567. https://doi.org/10.1126/science.1215674</span></li>
+<li><span id="Dunbar2007-qh">Dunbar, R. I. M., &amp; Shultz, S. (2007). Evolution in the social brain. <i>Science</i>, <i>317</i>(5843), 1344–1347. https://doi.org/10.1126/science.1145463</span></li>
+<li><span id="Balter2012-iu">Balter, M. (2012). Why Are Our Brains So Big? <i>Science</i>, <i>338</i>(6103), 33–34. https://doi.org/10.1126/science.338.6103.33</span></li>
+<li><span id="Hopfield1985-mu">Hopfield, J. J., &amp; Tank, D. W. (1985). “Neural” computation of decisions in optimization problems. <i>Biological Cybernetics</i>, <i>52</i>(3), 141–152. https://doi.org/10.1007/BF00339943</span></li>
+<li><span id="Girosi1990-zl">Girosi, F., &amp; Poggio, T. (1990). Networks and the best approximation property. <i>Biological Cybernetics</i>, <i>63</i>(3), 169–176. https://doi.org/10.1007/BF00195855</span></li>
+<li><span id="Cybenko1989-ed">Cybenko, G. (1989). Approximation by superpositions of a sigmoidal function. <i>Mathematics of Control, Signals, and Systems</i>, <i>2</i>(4), 303–314. https://doi.org/10.1007/BF02551274</span></li>
+<li><span id="Boyd1979-bd">Boyd, I. A., &amp; Kalu, K. U. (1979). Scaling factor relating conduction velocity and diameter for
+              myelinated afferent nerve fibres in the cat hind limb. <i>The Journal of Physiology</i>, <i>289</i>, 277–297. https://doi.org/10.1113/jphysiol.1979.sp012737</span></li>
+<li><span id="Dunning_Hotopp2007-lw">Dunning Hotopp, J. C., Clark, M. E., Oliveira, D. C. S. G., Foster, J. M., Fischer, P., Muñoz Torres, M. C., … Werren, J. H. (2007). Widespread lateral gene transfer from intracellular bacteria to
+              multicellular eukaryotes. <i>Science</i>, <i>317</i>(5845), 1753–1756. https://doi.org/10.1126/science.1142490</span></li>
+<li><span id="Keeling2008-ge">Keeling, P. J., &amp; Palmer, J. D. (2008). Horizontal gene transfer in eukaryotic evolution. <i>Nature Reviews. Genetics</i>, <i>9</i>(8), 605–618. https://doi.org/10.1038/nrg2386</span></li>
+<li><span id="Jain1999-fz">Jain, R., Rivera, M. C., &amp; Lake, J. A. (1999). Horizontal gene transfer among genomes: the complexity
+               hypothesis. <i>Proceedings of the National Academy of Sciences of the United
+               States of America</i>, <i>96</i>(7), 3801–3806. https://doi.org/10.1073/pnas.96.7.3801</span></li>
+<li><span id="Bryson1996-em">Bryson, A. E. (1996). Optimal control-1950 to 1985. <i>IEEE Control Systems Magazine</i>, <i>16</i>(3), 26–33. https://doi.org/10.1109/37.506395</span></li>
+<li><span id="Gregory2001-kf">Gregory, T. R. (2001). Coincidence, coevolution, or causation? DNA content, cell size,
+              and the C-value enigma. <i>Biological Reviews of the Cambridge Philosophical Society</i>, <i>76</i>(1), 65–101. Retrieved from https://www.ncbi.nlm.nih.gov/pubmed/11325054</span></li>
+<li><span id="Quesada2011-qa">Quesada, R., Triana, E., Vargas, G., Douglass, J. K., Seid, M. A., Niven, J. E., … Wcislo, W. T. (2011). The allometry of CNS size and consequences of miniaturization
+              in orb-weaving and cleptoparasitic spiders. <i>Arthropod Structure &amp; Development</i>, <i>40</i>(6), 521–529. https://doi.org/10.1016/j.asd.2011.07.002</span></li>
+<li><span id="Polilov2016-tf">Polilov, A. A. (2016). <i>At the Size Limit - Effects of Miniaturization in Insects</i>. Springer. Retrieved from https://market.android.com/details?id=book-LvBNDQAAQBAJ</span></li>
+<li><span id="Polilov2012-qc">Polilov, A. A. (2012). The smallest insects evolve anucleate neurons. <i>Arthropod Structure &amp; Development</i>, <i>41</i>(1), 29–34. https://doi.org/10.1016/j.asd.2011.09.001</span></li>
+<li><span id="Collett2005-cg">Collett, T. S. (2005). Faculty of 1000 evaluation for Ion-channel noise places limits on
+             the miniaturization of the brain’s wiring. <i>F1000 - Post-publication peer review of the biomedical literature</i>. https://doi.org/10.3410/f.1027461.328551</span></li>
+<li><span id="Faisal2005-qw">Faisal, A. A., White, J. A., &amp; Laughlin, S. B. (2005). Ion-channel noise places limits on the miniaturization of the
+              brain’s wiring. <i>Current Biology: CB</i>, <i>15</i>(12), 1143–1149. https://doi.org/10.1016/j.cub.2005.05.056</span></li>
+<li><span id="Jansen2004-yt">Jansen, D., &amp; Buttner, H. (2004). Real-time Ethernet: the EtherCAT solution. <i>Computing and Control Engineering</i>, <i>15</i>(1), 16–21. https://doi.org/10.1049/cce:20040104</span></li>
+<li><span id="Felser2005-rj">Felser, M. (2005). Real-Time Ethernet - Industry Prospective. <i>Proceedings of the IEEE</i>, <i>93</i>(6), 1118–1129. https://doi.org/10.1109/JPROC.2005.849720</span></li>
+<li><span id="Sauter2011-rz">Sauter, T., Soucek, S., Kastner, W., &amp; Dietrich, D. (2011). The Evolution of Factory and Building Automation. <i>IEEE Industrial Electronics Magazine</i>, <i>5</i>(3), 35–48. https://doi.org/10.1109/MIE.2011.942175</span></li>
+<li><span id="D_Decotignie2009-as">d. Decotignie, J. (2009). The Many Faces of Industrial Ethernet [Past and Present]. <i>IEEE Industrial Electronics Magazine</i>, <i>3</i>(1), 8–19. https://doi.org/10.1109/MIE.2009.932171</span></li>
+<li><span id="Schenato2007-fh">Schenato, L., Sinopoli, B., Franceschetti, M., Poolla, K., &amp; Sastry, S. S. (2007). Foundations of Control and Estimation Over Lossy Networks. <i>Proceedings of the IEEE</i>, <i>95</i>(1), 163–187. https://doi.org/10.1109/JPROC.2006.887306</span></li>
+<li><span id="Sethian1999-xi">Sethian, J. A. (1999). <i>Level Set Methods and Fast Marching Methods: Evolving Interfaces
+               in Computational Geometry, Fluid Mechanics, Computer Vision, and
+               Materials Science</i>. Cambridge University Press. Retrieved from https://market.android.com/details?id=book-ErpOoynE4dIC</span></li>
+<li><span id="Lygeros2004-da">Lygeros, J. (2004). On reachability and minimum cost optimal control. <i>Automatica: the Journal of IFAC, the International Federation Of
+               Automatic Control</i>, <i>40</i>(6), 917–927. https://doi.org/10.1016/j.automatica.2004.01.012</span></li>
+<li><span id="Anant_Sahai_undated-rm">Anant Sahai, S. M. The Necessity and Sufficiency of Anytime Capacity for Control
+              over a Noisy Communication Link – Part II: Vector Systems. Retrieved from http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.59.5614</span></li>
+<li><span id="Persis2005-bx">Persis, C. D. (2005). n-bit stabilization of n-dimensional nonlinear systems in
+              feedforward form. <i>IEEE Transactions on Automatic Control</i>, <i>50</i>(3), 299–311. https://doi.org/10.1109/TAC.2005.843847</span></li>
+<li><span id="Nair2004-xw">Nair, G. N., Evans, R. J., Mareels, I. M. Y., &amp; Moran, W. (2004). Topological feedback entropy and Nonlinear stabilization. <i>IEEE Transactions on Automatic Control</i>, <i>49</i>(9), 1585–1597. https://doi.org/10.1109/TAC.2004.834105</span></li>
+<li><span id="Adler1965-jd">Adler, R. L., Konheim, A. G., &amp; McAndrew, M. H. (1965). Topological entropy. <i>Transactions of the American Mathematical Society</i>, <i>114</i>(2), 309–319. Retrieved from https://www.ams.org/tran/1965-114-02/S0002-9947-1965-0175106-9/S0002-9947-1965-0175106-9.pdf</span></li>
+<li><span id="Yuksel2010-bn">Yuksel, S. (2010). Stochastic Stabilization of Noisy Linear Systems With
+              Fixed-Rate Limited Feedback. <i>IEEE Transactions on Automatic Control</i>, <i>55</i>(12), 2847–2853. https://doi.org/10.1109/TAC.2010.2079510</span></li>
+<li><span id="Nair2000-cj">Nair, G. N., &amp; Evans, R. J. (2000). Stabilization with data-rate-limited feedback: tightest
+              attainable bounds. <i>Systems &amp; Control Letters</i>, <i>41</i>(1), 49–56. https://doi.org/10.1016/S0167-6911(00)00037-2</span></li>
+<li><span id="Ishii2003-tn">Ishii, H., &amp; A. Francis, B. (2003). Quadratic stabilization of sampled-data systems with quantization. <i>Automatica: the Journal of IFAC, the International Federation Of
+              Automatic Control</i>, <i>39</i>(10), 1793–1800. https://doi.org/10.1016/S0005-1098(03)00179-1</span></li>
+<li><span id="Ishii2005-ze">Ishii, H., &amp; Başar, T. (2005). Remote control of LTI systems over networks with state
+              quantization. <i>Systems &amp; Control Letters</i>, <i>54</i>(1), 15–31. https://doi.org/10.1016/j.sysconle.2004.06.002</span></li>
+<li><span id="Tatikonda2004-qp">Tatikonda, S., &amp; Mitter, S. (2004). Control over noisy channels. <i>IEEE Transactions on Automatic Control</i>, <i>49</i>(7), 1196–1201. https://doi.org/10.1109/TAC.2004.831102</span></li>
+<li><span id="Matveev2005-mm">Matveev, A. S., &amp; Savkin, A. V. (2005). Comments on “Control over noisy channels” and relevant negative
+              results. <i>IEEE Transactions on Automatic Control</i>, <i>50</i>(12), 2105–2110. https://doi.org/10.1109/TAC.2005.860258</span></li>
+<li><span id="Matveev2004-eu">Matveev, A. S., &amp; Savkin, A. V. (2004). The problem of LQG optimal control via a limited capacity
+              communication channel. <i>Systems &amp; Control Letters</i>, <i>53</i>(1), 51–64. https://doi.org/10.1016/j.sysconle.2004.02.021</span></li>
+<li><span id="Fox2016-tj">Fox, R., &amp; Tishby, N. (2016). Minimum-Information LQG Control - Part I: Memoryless
+                   Controllers. Retrieved from http://arxiv.org/abs/1606.01946</span></li>
+<li><span id="Fox2016-al">Fox, R., &amp; Tishby, N. (2016). Minimum-Information LQG Control - Part II: Retentive
+                   Controllers. Retrieved from http://arxiv.org/abs/1606.01947</span></li>
+<li><span id="Borst1999-go">Borst, A., &amp; Theunissen, F. E. F. E. (1999). Information theory and neural coding. <i>Nature Neuroscience</i>, <i>2</i>(11), 947–957. https://doi.org/10.1038/14731</span></li>
+<li><span id="Ikeda2009-iz">Ikeda, S., &amp; Manton, J. H. (2009). Spiking neuron channel. In <i>IEEE International Symposium on Information Theory -
+               Proceedings</i> (pp. 1589–1593). https://doi.org/10.1109/ISIT.2009.5205817</span></li>
+<li><span id="MacKay1952-om">MacKay, D. M., &amp; McCulloch, W. S. (1952). The limiting information capacity of a neuronal link. <i>The Bulletin of Mathematical Biophysics</i>, <i>14</i>(2), 127–135. https://doi.org/10.1007/BF02477711</span></li>
+<li><span id="Perge2012-vm">Perge, J. a, Niven, J. E., Mugnaini, E., Balasubramanian, V., &amp; Sterling, P. (2012). Why Do Axons Differ in Caliber? <i>The Journal of Neuroscience: the Official Journal of the Society
+              for Neuroscience</i>, <i>32</i>(2), 626–638. https://doi.org/10.1523/?JNEUROSCI.4254-11.2012</span></li>
+<li><span id="Laughlin2003-xn">Laughlin, S. B., &amp; Sejnowski, T. J. (2003). Communication in neuronal networks. <i>Science</i>, <i>301</i>(5641), 1870–1874. https://doi.org/10.1126/science.1089662</span></li>
+<li><span id="Niven2012-pc">Niven, J. E., &amp; Farris, S. M. (2012). Miniaturization of nervous systems and neurons. <i>Current Biology: CB</i>, <i>22</i>(9), R323–R329. https://doi.org/10.1016/j.cub.2012.04.002</span></li>
+<li><span id="Chittka2009-sy">Chittka, L., &amp; Niven, J. (2009). Are Bigger Brains Better? <i>Current Biology: CB</i>, <i>19</i>(21), R995–R1008. https://doi.org/10.1016/j.cub.2009.08.023</span></li>
+<li><span id="Sterling2015-po">Sterling, P., &amp; Laughlin, S. (2015). <i>Principles of Neural Design</i>. MIT Press. Retrieved from https://market.android.com/details?id=book-Tq6rCQAAQBAJ</span></li>
+<li><span id="Quevedo2014-dz">Quevedo, D. E., Gupta, V., Ma, W. J., &amp; Yüksel, S. (2014). Stochastic Stability of Event-Triggered Anytime Control. <i>IEEE Transactions on Automatic Control</i>, <i>59</i>(12), 3373–3379. https://doi.org/10.1109/TAC.2014.2351952</span></li>
+<li><span id="Pearson2017-gz">Pearson, J., Hespanha, J. P., &amp; Liberzon, D. (2017). Control With Minimal Cost-Per-Symbol Encoding and
+              Quasi-Optimality of Event-Based Encoders. <i>IEEE Transactions on Automatic Control</i>, <i>62</i>(5), 2286–2301. https://doi.org/10.1109/TAC.2016.2604921</span></li>
+<li><span id="Tallapragada2016-ui">Tallapragada, P., &amp; Cortés, J. (2016). Event-Triggered Stabilization of Linear Systems Under Bounded
+              Bit Rates. <i>IEEE Transactions on Automatic Control</i>, <i>61</i>(6), 1575–1589. https://doi.org/10.1109/TAC.2015.2480215</span></li>
+<li><span id="Nair2007-yr">Nair, G. N., Fagnani, F., Zampieri, S., &amp; Evans, R. J. (2007). Feedback Control Under Data Rate Constraints: An Overview. <i>Proceedings of the IEEE</i>, <i>95</i>(1), 108–137. https://doi.org/10.1109/JPROC.2006.887294</span></li>
+<li><span id="Nair2013-yr">Nair, G. N. (2013). A Nonstochastic Information Theory for Communication and State
+              Estimation. <i>IEEE Transactions on Automatic Control</i>, <i>58</i>(6), 1497–1510. https://doi.org/10.1109/TAC.2013.2241491</span></li>
+<li><span id="Sahai2006-nf">Sahai, A., &amp; Mitter, S. (2006). The necessity and sufficiency of anytime capacity for
+                   stabilization of a linear system over a noisy communication
+                   link, Part II: vector systems. Retrieved from http://arxiv.org/abs/cs/0610146</span></li>
+<li><span id="Sahai2006-ul">Sahai, A., &amp; Mitter, S. (2006). The necessity and sufficiency of anytime capacity for
+               stabilization of a linear system over a noisy communication
+               link—Part I: Scalar systems. <i>IEEE Transactions on Information Theory / Professional Technical
+               Group on Information Theory</i>, <i>52</i>(8), 3369–3395. Retrieved from http://ieeexplore.ieee.org/abstract/document/1661825/</span></li>
+<li><span id="Liberzon2014-hv">Liberzon, D. (2014). Finite data-rate feedback stabilization of switched and hybrid
+              linear systems. <i>Automatica: the Journal of IFAC, the International Federation Of
+              Automatic Control</i>, <i>50</i>(2), 409–420. https://doi.org/10.1016/j.automatica.2013.11.037</span></li>
+<li><span id="Tatikonda2004-rz">Tatikonda, S., Sahai, A., &amp; Mitter, S. (2004). Stochastic linear control over a communication channel. <i>IEEE Transactions on Automatic Control</i>, <i>49</i>(9), 1549–1561. https://doi.org/10.1109/TAC.2004.834430</span></li>
+<li><span id="Nair2004-vy">Nair, G. N., Evans, R. J., Mareels, I. M. Y., &amp; Moran, W. (2004). Topological feedback entropy for nonlinear stabilization. <i>IFAC Proceedings Volumes</i>, <i>37</i>(13), 1003–1008. https://doi.org/10.1016/S1474-6670(17)31357-5</span></li>
+<li><span id="Liberzon2005-pb">Liberzon, D., &amp; Hespanha, J. P. (2005). Stabilization of nonlinear systems with limited information
+              feedback. <i>IEEE Transactions on Automatic Control</i>, <i>50</i>(6), 910–915. https://doi.org/10.1109/TAC.2005.849258</span></li>
+<li><span id="Liberzon2009-mb">Liberzon, D. (2009). Nonlinear Control with Limited Information. <i>Communications in Information and Systems</i>, <i>9</i>(1), 41–58. Retrieved from https://projecteuclid.org/euclid.cis/1242738941</span></li>
+<li><span id="Middleton2009-lu">Middleton, R. H., Rojas, A. J., Freudenberg, J. S., &amp; Braslavsky, J. H. (2009). Feedback Stabilization Over a First Order Moving Average Gaussian
+              Noise Channel. <i>IEEE Transactions on Automatic Control</i>, <i>54</i>(1), 163–167. https://doi.org/10.1109/TAC.2008.2007183</span></li>
+<li><span id="Minero2009-ko">Minero, P., Franceschetti, M., Dey, S., &amp; Nair, G. N. (2009). Data Rate Theorem for Stabilization Over Time-Varying Feedback
+              Channels. <i>IEEE Transactions on Automatic Control</i>, <i>54</i>(2), 243–255. https://doi.org/10.1109/TAC.2008.2010887</span></li>
+<li><span id="Sukhavasi2016-jr">Sukhavasi, R. T., &amp; Hassibi, B. (2016). Linear Time-Invariant Anytime Codes for Control Over Noisy
+              Channels. <i>IEEE Transactions on Automatic Control</i>, <i>61</i>(12), 3826–3841. https://doi.org/10.1109/TAC.2016.2529960</span></li>
+<li><span id="Martins2006-ko">Martins, N. C., Dahleh, M. A., &amp; Elia, N. (2006). Feedback stabilization of uncertain systems in the presence of a
+              direct link. <i>IEEE Transactions on Automatic Control</i>, <i>51</i>(3), 438–447. https://doi.org/10.1109/TAC.2006.871940</span></li>
+<li><span id="Nair2003-gx">Nair, G. N., &amp; Evans, R. J. (2003). Exponential stabilisability of finite-dimensional linear systems
+              with limited data rates. <i>Automatica: the Journal of IFAC, the International Federation Of
+              Automatic Control</i>, <i>39</i>(4), 585–593. https://doi.org/10.1016/S0005-1098(02)00285-6</span></li>
+<li><span id="Nair2004-bo">Nair, G., &amp; Evans, R. (2004). Stabilizability of Stochastic Linear Systems with Finite
+               Feedback Data Rates. <i>SIAM Journal on Control and Optimization</i>, <i>43</i>(2), 413–436. https://doi.org/10.1137/S0363012902402116</span></li>
+<li><span id="Tatikonda2004-nq">Tatikonda, S., &amp; Mitter, S. (2004). Control under communication constraints. <i>IEEE Transactions on Automatic Control</i>, <i>49</i>(7), 1056–1068. https://doi.org/10.1109/TAC.2004.831187</span></li>
+<li><span id="Wong1999-yp">Wong, W. S., &amp; Brockett, R. W. (1999). Systems with finite communication bandwidth constraints. II.
+              Stabilization with limited information feedback. <i>IEEE Transactions on Automatic Control</i>, <i>44</i>(5), 1049–1053. https://doi.org/10.1109/9.763226</span></li>
+<li><span id="Wong1997-rc">Wong, W. S., &amp; Brockett, R. W. (1997). Systems with finite communication bandwidth constraints. I. State
+              estimation problems. <i>IEEE Transactions on Automatic Control</i>, <i>42</i>(9), 1294–1299. https://doi.org/10.1109/9.623096</span></li>
+<li><span id="Wang2018-qv">Wang, J. (2018). Asymptotic stabilization of continuous-time linear systems with
+              quantized state feedback. <i>Automatica: the Journal of IFAC, the International Federation Of
+              Automatic Control</i>, <i>88</i>, 83–90. https://doi.org/10.1016/j.automatica.2017.11.027</span></li>
+<li><span id="Delchamps1990-yy">Delchamps, D. F. (1990). Stabilizing a linear system with quantized state feedback. <i>IEEE Transactions on Automatic Control</i>, <i>35</i>(8), 916–924. https://doi.org/10.1109/9.58500</span></li>
+<li><span id="Murray2003-zl">Murray, R. M., Astrom, K. J., Boyd, S. P., Brockett, R. W., &amp; Stein, G. (2003). Future directions in control in an information-rich world. <i>IEEE Control Systems</i>, <i>23</i>(2), 20–33. https://doi.org/10.1109/MCS.2003.1188769</span></li>
+<li><span id="Hariyoshi2016-or">Hariyoshi, E., Ranade, G., &amp; Sahai, A. (2016). Control with actuation anticipation. In <i>2016 IEEE 55th Conference on Decision and Control (CDC)</i> (pp. 5617–5622). ieeexplore.ieee.org. https://doi.org/10.1109/CDC.2016.7799132</span></li>
+<li><span id="Hariyoshi2015-uo">Hariyoshi, E., Ranade, G., &amp; Sahai, A. (2015). Vector control systems with unpredictable actuation. In <i>2015 53rd Annual Allerton Conference on Communication, Control,
+               and Computing (Allerton)</i> (pp. 1316–1322). ieeexplore.ieee.org. https://doi.org/10.1109/ALLERTON.2015.7447160</span></li>
+<li><span id="Khojasteh2016-jy">Khojasteh, M. J., Tallapragada, P., Cortés, J., &amp; Franceschetti, M. (2016). The value of timing information in event-triggered control. Retrieved from http://arxiv.org/abs/1609.09594</span></li>
+<li><span id="Khojasteh2017-hg">Khojasteh, M. J., Tallapragada, P., Cortes, J., &amp; Franceschetti, M. (2017). Time-triggering versus event-triggering control over
+                   communication channels. Retrieved from http://arxiv.org/abs/1703.10744</span></li>
+<li><span id="Ding2016-td">Ding, J., Peres, Y., &amp; Ranade, G. (2016). A tiger by the tail: When multiplicative noise stymies control. In <i>2016 IEEE International Symposium on Information Theory
+               (ISIT)</i> (pp. 1994–1998). ieeexplore.ieee.org. https://doi.org/10.1109/ISIT.2016.7541648</span></li>
+<li><span id="Ranade2016-oc">Ranade, G., &amp; Sahai, A. (2016). Control with side information. In <i>2016 Indian Control Conference (ICC)</i> (pp. 405–411). ieeexplore.ieee.org. https://doi.org/10.1109/INDIANCC.2016.7441166</span></li>
+<li><span id="Ding2016-on">Ding, J., Peres, Y., Ranade, G., &amp; Zhai, A. (2016). When multiplicative noise stymies control. Retrieved from http://arxiv.org/abs/1612.03239</span></li>
+<li><span id="Kostina2016-is">Kostina, V., Peres, Y., Rácz, M. Z., &amp; Ranade, G. (2016). Rate-limited control of systems with uncertain gain. In <i>2016 54th Annual Allerton Conference on Communication, Control,
+               and Computing (Allerton)</i> (pp. 1189–1196). ieeexplore.ieee.org. https://doi.org/10.1109/ALLERTON.2016.7852370</span></li>
+<li><span id="Ranade2015-ij">Ranade, G., &amp; Sahai, A. (2015). Control capacity. In <i>2015 IEEE International Symposium on Information Theory
+               (ISIT)</i> (pp. 2221–2225). ieeexplore.ieee.org. https://doi.org/10.1109/ISIT.2015.7282850</span></li>
+<li><span id="Li2009-lu">Li, C., Umbanhowar, P. B., Komsuoglu, H., Koditschek, D. E., &amp; Goldman, D. I. (2009). From the Cover: Sensitive dependence of the motion of a legged
+              robot on granular media. <i>Proceedings of the National Academy of Sciences of the United
+              States of America</i>, <i>106</i>(9), 3029–3034. https://doi.org/10.1073/pnas.0809095106</span></li>
+<li><span id="Hornik1989-vi">Hornik, K., Stinchcombe, M., &amp; White, H. (1989). Multilayer feedforward networks are universal approximators. <i>Neural Networks: the Official Journal of the International
+               Neural Network Society</i>, <i>2</i>(5), 359–366. https://doi.org/10.1016/0893-6080(89)90020-8</span></li>
+<li><span id="More2010-gy">More, H. L., Hutchinson, J. R., Collins, D. F., Weber, D. J., Aung, S. K. H., &amp; Donelan, J. M. (2010). Scaling of sensorimotor control in terrestrial mammals. <i>Proceedings of the Royal Society B: Biological Sciences</i>, <i>277</i>(1700), 3563–3568. https://doi.org/10.1098/rspb.2010.0898</span></li>
+<li><span id="Bellman1957-rz">Bellman, R. (1957). <i>Dynamic Programming</i>. Princeton University Press. Retrieved from http://books.google.com/books?id=wdtoPwAACAAJ</span></li>
+<li><span id="Mahadevan2009-gx">Mahadevan, P., Sharma, P., Banerjee, S., &amp; Ranganathan, P. (2009). A Power Benchmarking Framework for Network Devices. In <i>International Conference on Research in Networking</i> (pp. 795–808). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-642-01399-7_62</span></li>
+<li><span id="Beckhoff_Automation2018-df">Beckhoff Automation. (2018). <i>EtherCAT System Documentation</i>. Retrieved from https://download.beckhoff.com/download/document/io/ethercat-terminals/ethercatsystem_en.pdf</span></li>
+<li><span id="Lennie2003-ob">Lennie, P. (2003). The Cost of Cortical Computation. <i>Current Biology: CB</i>, <i>13</i>(6), 493–497. https://doi.org/10.1016/S0960-9822(03)00135-0</span></li></ol>
+
+
+              <nav class="c-page__nav">
+  
+
+  
+</nav>
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Communication &amp; Control</title>
+  <meta name="description" content="Communication &amp; ControlIn this notebook, we summarize statistics relevant for the communication and control subsystem in nervous systems and digital comp...">
+
+  <link rel="canonical" href="http://faculty.washington.edu/sburden/avm/comm_ctrl.html">
+  <link rel="alternate" type="application/rss+xml" title="Animals v. Machines" href="http://faculty.washington.edu/sburden/avm/feed.xml">
+
+  <meta property="og:url"         content="http://faculty.washington.edu/sburden/avm/comm_ctrl.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Communication &amp; Control" />
+<meta property="og:description" content="Communication &amp; ControlIn this notebook, we summarize statistics relevant for the communication and control subsystem in nervous systems and digital comp..." />
+<meta property="og:image"       content="" />
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage":
+    "http://faculty.washington.edu/sburden/avm/comm_ctrl.html",
+  "headline":
+    "Communication &amp; Control",
+  "datePublished":
+    "2020-01-10T14:06:44-08:00",
+  "dateModified":
+    "2020-01-10T14:06:44-08:00",
+  "description":
+    "Communication &amp; ControlIn this notebook, we summarize statistics relevant for the communication and control subsystem in nervous systems and digital comp...",
+  "author": {
+    "@type": "Person",
+    "name": "T Libby, HL More, SA Burden, JM Donelan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://faculty.washington.edu/sburden/avm",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://faculty.washington.edu/sburden/avm",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/sburden/avm/assets/css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css ">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/sburden/avm/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    CommonHTML: {
+        linebreaks: {
+            automatic: true,
+        },
+    },
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML' async></script>
+
+  <!-- DOM updating function -->
+  <script>
+const runWhenDOMLoaded = cb => {
+  if (document.readyState != 'loading') {
+    cb()
+  } else if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', cb)
+  } else {
+    document.attachEvent('onreadystatechange', function() {
+      if (document.readyState == 'complete') cb()
+    })
+  }
+}
+
+// Helper function to init things quickly
+initFunction = function(myfunc) {
+  runWhenDOMLoaded(myfunc);
+  document.addEventListener('turbolinks:load', myfunc);
+};
+</script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '/sburden/avm';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="/sburden/avm/assets/js/anchor.min.js"  type="text/javascript"></script>
+  <script>
+
+initFunction(function () {
+    anchors.add("main h1, main h2, main h3, main h4")
+});
+
+</script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="/sburden/avm/assets/js/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+
+  <!-- Load the auto-generating TOC -->
+  <script src="/sburden/avm/assets/js/tocbot.min.js"  type="text/javascript"></script>
+  <script>
+var initToc = function () {
+  tocbot.init({
+    tocSelector: 'nav.onthispage',
+    contentSelector: '.c-textbook__content',
+    headingSelector: 'h2, h3',
+    orderedList: false,
+    collapseDepth: 6,
+    listClass: 'toc__menu',
+    activeListItemClass: "",  // Not using
+    activeLinkClass: "", // Not using
+  });
+  tocbot.refresh();
+}
+initFunction(initToc);
+</script>
+
+  <!-- Google analytics -->
+  <script src="/sburden/avm/assets/js/ga.js" async></script>
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" async></script>
+
+  <!-- Load JS that depends on site variables -->
+  <script>
+/**
+ * Set up copy/paste for code blocks
+ */
+const codeCellId = index => `codecell${index}`
+
+const clipboardButton = id =>
+  `<a id="copy-button-${id}" class="btn copybtn o-tooltip--left" data-tooltip="Copy" data-clipboard-target="#${id}">
+    <img src="/sburden/avm/assets/images/copy-button.svg" alt="Copy to clipboard">
+  </a>`
+
+// Clears selected text since ClipboardJS will select the text when copying
+const clearSelection = () => {
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges()
+  } else if (document.selection) {
+    document.selection.empty()
+  }
+}
+
+// Changes tooltip text for two seconds, then changes it back
+const temporarilyChangeTooltip = (el, newText) => {
+  const oldText = el.getAttribute('data-tooltip')
+  el.setAttribute('data-tooltip', newText)
+  setTimeout(() => el.setAttribute('data-tooltip', oldText), 2000)
+}
+
+const addCopyButtonToCodeCells = () => {
+  // If ClipboardJS hasn't loaded, wait a bit and try again. This
+  // happens because we load ClipboardJS asynchronously.
+  if (window.ClipboardJS === undefined) {
+    setTimeout(addCopyButtonToCodeCells, 250)
+    return
+  }
+
+  const codeCells = document.querySelectorAll('div.c-textbook__content > div.highlighter-rouge > div.highlight > pre, div.input_area pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("copy-button" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', clipboardButton(id));
+    }
+  })
+
+  const clipboard = new ClipboardJS('.copybtn')
+  clipboard.on('success', event => {
+    clearSelection()
+    temporarilyChangeTooltip(event.trigger, 'Copied!')
+  })
+
+  clipboard.on('error', event => {
+    temporarilyChangeTooltip(event.trigger, 'Failed to copy')
+  })
+
+  // Get rid of clipboard before the next page visit to avoid memory leak
+  document.addEventListener('turbolinks:before-visit', () =>
+    clipboard.destroy()
+  )
+}
+
+initFunction(addCopyButtonToCodeCells);
+</script>
+
+
+  <!-- Hide cell code -->
+  <script>
+    /**
+    Add buttons to hide code cells
+    */
+
+
+    var setCodeCellVisibility = function (inputField, kind) {
+        // Update the image and class for hidden
+        var id = inputField.getAttribute('data-id');
+        var codeCell = document.querySelector(`#${id} div.highlight`);
+
+        if (kind === "visible") {
+            codeCell.classList.remove('hidden');
+            inputField.checked = true;
+        } else {
+            codeCell.classList.add('hidden');
+            inputField.checked = false;
+        }
+    }
+
+    var toggleCodeCellVisibility = function (event) {
+        // The label is clicked, and now we decide what to do based on the input field's clicked status
+        if (event.target.tagName === "LABEL") {
+            var inputField = event.target.previousElementSibling;
+        } else {
+            // It is the span inside the target
+            var inputField = event.target.parentElement.previousElementSibling;
+        }
+
+        if (inputField.checked === true) {
+            setCodeCellVisibility(inputField, "visible");
+        } else {
+            setCodeCellVisibility(inputField, "hidden");
+        }
+    }
+
+
+    // Button constructor
+    const hideCodeButton = id => `<input class="hidebtn" type="checkbox" id="hidebtn${id}" data-id="${id}"><label title="Toggle cell" for="hidebtn${id}" class="plusminus"><span class="pm_h"></span><span class="pm_v"></span></label>`
+
+    var addHideButton = function () {
+        // If a hide button is already added, don't add another
+        if (document.querySelector('div.hidecode input') !== null) {
+            return;
+        }
+
+        // Find the input cells and add a hide button
+        document.querySelectorAll('div.input_area').forEach(function (item, index) {
+            if (!item.classList.contains("hidecode")) {
+                // Skip the cell if it doesn't have a hidecode class
+                return;
+            }
+
+            const id = codeCellId(index)
+            item.setAttribute('id', id);
+            // Insert the button just inside the end of the next div
+            item.querySelector('div').insertAdjacentHTML('beforeend', hideCodeButton(id))
+
+            // Set up the visibility toggle
+            hideLink = document.querySelector(`#${id} div.highlight + input + label`);
+            hideLink.addEventListener('click', toggleCodeCellVisibility)
+        });
+    }
+
+
+    // Initialize the hide buttos
+    var initHiddenCells = function () {
+        // Add hide buttons to the cells
+        addHideButton();
+
+        // Toggle the code cells that should be hidden
+        document.querySelectorAll('div.hidecode input').forEach(function (item) {
+            setCodeCellVisibility(item, 'hidden');
+            item.checked = true;
+        })
+    }
+
+    initFunction(initHiddenCells);
+
+</script>
+
+  <!-- Load custom website scripts -->
+  <script src="/sburden/avm/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/sburden/avm/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/sburden/avm/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="/sburden/avm/assets/js/lunr/lunr.min.js" type="text/javascript"></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="/intro"><img src="/sburden/avm/images/logo/avm.jpg" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">Animals v. Machines</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/sburden/avm/home.html"
+        >
+          
+          Home
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry c-sidebar__entry--active"
+          href="/sburden/avm/comm_ctrl.html"
+        >
+          
+          Communication & Control
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/sburden/avm/citations.html"
+        >
+          
+          Citations
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+        <li><h2 class="c-sidebar__title">Demo textbook</li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/sburden/avm/features/features.html"
+        >
+          
+          Features and customization
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/sburden/avm/features/markdown.html"
+                >
+                  
+                  Markdown files
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/sburden/avm/features/notebooks.html"
+                >
+                  
+                  Jupyter notebooks
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a></p>
+</nav>
+
+      
+      <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+      <aside class="sidebar__right">
+          <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+          <nav class="onthispage">
+          </nav>
+      </aside>
+      
+      <main class="c-textbook__page" tabindex="-1">
+          <div class="o-wrapper">
+            <div class="c-sidebar-toggle">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <button
+    id="js-sidebar-toggle"
+    class="hamburger hamburger--arrowalt is-active"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    <span class="c-sidebar-toggle__label">Toggle Sidebar</span>
+  </button>
+</div>
+
+            
+<div class="buttons">
+<a href="/sburden/avm/content/comm_ctrl.ipynb" download>
+<button id="interact-button-download" class="interact-button">download .ipynb</button>
+</a>
+
+
+
+
+
+
+</div>
+
+
+            <div class="c-textbook__content">
+              <h1 id="communication--control">Communication &amp; Control</h1>
+<p>In this notebook, we summarize statistics relevant for the communication and control subsystem in nervous systems and digital computer networks.</p>
+
+<h2 id="communication">Communication</h2>
+
+<p>In the following subsections, we quantify and compare <em>geometry</em>, <em>energetics</em>, <em>latency</em>, and <em>bandwidth</em> of communication channels in nervous systems and digital computer networks.  Subsequently, we compare two hypothetical $10$ centimeter-length communication channels implemented with the two technologies.</p>
+
+<h3 id="geometry">Geometry</h3>
+
+<p>The linear dimensions of transistors are on the order of $10$ nanometers in state-of-the-art fabrication processes.  For instance, the Tianjic chip, which implements artificial neural network computations, is fabricated with a $28$-nanometer process <a class="citation" href="#Pei2019-rv">(Pei et al., 2019)</a>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">transistor_length</span> <span class="o">=</span> <span class="mi">28</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">nanometer</span> 
+<span class="n">transistor_wire_diameter</span> <span class="o">=</span> <span class="n">transistor_length</span>
+<span class="n">Ethernet_diameter</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">millimeter</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>Empirically, neuron nuclei diameters range from $4$ to $100$ micrometers, axon diameters range from $0.1$ to $10$ micrometers <a class="citation" href="#Perge2012-vm">(Perge, Niven, Mugnaini, Balasubramanian, &amp; Sterling, 2012)</a>, and there are theoretical reasons to believe smaller sizes are not practical <a class="citation" href="#Faisal2005-qw">(Faisal, White, &amp; Laughlin, 2005)</a>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">neuron_diameter</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">micrometer</span>
+<span class="n">axon_diameter</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">micrometer</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<h3 id="energetics">Energetics</h3>
+
+<p>Synaptic transmission rate is theoretically limited to (and experimentally measured up to) $\approx 10$ bits per spike and $\approx 10^3$ bits per second
+<a class="citation" href="#MacKay1952-om">(MacKay &amp; McCulloch, 1952)</a>.</p>
+
+<p>One spike consumes $2.4 \times 10^9$ ATP molecules in the human cortex, and the average cortical cell has $0.1$ meters of intracortical axon <a class="citation" href="#Lennie2003-ob">(Lennie, 2003)</a>.</p>
+
+<p>Thus, converting units, we determine that a nervous system requires $\approx 122$ picojoules to transmit one bit of information over a distance of one meter.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">units</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="s">'spike = 10 * bit'</span><span class="p">)</span>
+<span class="n">units</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="s">'ATP molecules = mol / (6e23) = ATP'</span><span class="p">)</span>
+
+<span class="n">spike_distance</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">meter</span>
+<span class="n">ATP_per_spike</span> <span class="o">=</span> <span class="mf">2.4e9</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">ATP</span> <span class="o">/</span> <span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">spike</span> <span class="o">*</span> <span class="n">spike_distance</span><span class="p">)</span>
+<span class="n">ATP_J_per_mol</span> <span class="o">=</span> <span class="mf">30.5e3</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">joule</span> <span class="o">/</span> <span class="n">units</span><span class="o">.</span><span class="n">mol</span>
+
+<span class="n">spike_cost_per_bit</span> <span class="o">=</span> <span class="p">(</span><span class="n">ATP_per_spike</span> <span class="o">*</span> <span class="n">ATP_J_per_mol</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'cost to transmit information in nervous system ~='</span><span class="p">,</span>
+      <span class="n">readable</span><span class="p">(</span><span class="n">spike_cost_per_bit</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">joule</span> <span class="o">/</span> <span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">bit</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">meter</span><span class="p">))))</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+      <div class="output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cost to transmit information in nervous system ~= 122.0 picojoule / bit / meter
+</code></pre></div>      </div>
+    </div>
+  </div>
+</div>
+
+<p>Wired Ethernet uses $\approx 281$ picojoules to transmit one bit of information over a distance of one meter <a class="citation" href="#Mahadevan2009-gx">(Mahadevan, Sharma, Banerjee, &amp; Ranganathan, 2009)</a>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Ethernet_distance</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">meter</span>
+<span class="n">Ethernet_cost_per_bit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="mf">10.7</span><span class="p">,</span><span class="mf">4.1</span><span class="p">,</span><span class="mf">3.7</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="mf">13.7</span><span class="p">,</span><span class="mf">8.75</span><span class="p">,</span><span class="mf">153.7</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">milliwatt</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">megabit</span> <span class="o">/</span> <span class="n">units</span><span class="o">.</span><span class="n">sec</span><span class="p">)</span> <span class="o">/</span> <span class="n">Ethernet_distance</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'cost to transmit information over Ethernet ~='</span><span class="p">,</span>
+      <span class="n">readable</span><span class="p">(</span><span class="n">Ethernet_cost_per_bit</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">joule</span> <span class="o">/</span> <span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">bit</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">meter</span><span class="p">))))</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+      <div class="output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cost to transmit information over Ethernet ~= 281.1 picojoule / bit / meter
+</code></pre></div>      </div>
+    </div>
+  </div>
+</div>
+
+<h3 id="latency">Latency</h3>
+
+<p>Axonal conduction velocity is theoretically proportional to axon diameter; experimentally, conduction velocities top out at $100$ meters per second for the myelinated nerves in terrestrial mammals <a class="citation" href="#More2010-gy">(More et al., 2010)</a>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">axonal_conduction_velocity</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">meter</span> <span class="o">/</span> <span class="n">units</span><span class="o">.</span><span class="n">sec</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'axonal conduction velocity ~='</span><span class="p">,</span>
+      <span class="n">readable</span><span class="p">(</span><span class="n">axonal_conduction_velocity</span><span class="p">))</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+      <div class="output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>axonal conduction velocity ~= 100.0 meter / second
+</code></pre></div>      </div>
+    </div>
+  </div>
+</div>
+
+<p>EtherCAT (IEC 61158) <a class="citation" href="#Beckhoff_Automation2018-df">(Beckhoff Automation, 2018)</a>, a standard communication protocol for control systems based on Ethernet, performs updates every $12$ to $350$ microseconds for cable lengths up to $100$ meters, corresponding to conduction velocities on the order of 100 kilometers per second for cat-sized robots.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">EtherCAT_update</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">microseconds</span>
+<span class="n">EtherCAT_distance</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">meters</span>
+<span class="n">EtherCAT_conduction_velocity</span> <span class="o">=</span> <span class="n">EtherCAT_distance</span> <span class="o">/</span> <span class="n">EtherCAT_update</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'EtherCAT conduction velocity ~='</span><span class="p">,</span>
+      <span class="n">readable</span><span class="p">(</span><span class="n">EtherCAT_conduction_velocity</span><span class="p">))</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+      <div class="output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EtherCAT conduction velocity ~= 166.7 kilometer / second
+</code></pre></div>      </div>
+    </div>
+  </div>
+</div>
+
+<h3 id="bandwidth">Bandwidth</h3>
+
+<p>Synaptic transmission rates are theoretically limited to $10$ bits per spike and $10^3$ bits per second <a class="citation" href="#MacKay1952-om">(MacKay &amp; McCulloch, 1952)</a>; experimentally, the rates range from $1$ to $10$ bits per spike and $10$ to $10^3$ bits per second (Table 2 in <a class="citation" href="#Borst1999-go">(Borst &amp; Theunissen, 1999)</a>)</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">synaptic_bandwidth</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">bits</span> <span class="o">/</span> <span class="n">units</span><span class="o">.</span><span class="n">sec</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>EtherCAT guarantees transmission rates on the order of $10$ megabits per second <a class="citation" href="#Beckhoff_Automation2018-df">(Beckhoff Automation, 2018)</a>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">EtherCAT_bandwidth</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">7</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">bits</span> <span class="o">/</span> <span class="n">units</span><span class="o">.</span><span class="n">sec</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>Thus, a standard communication protocol for digital computers transmits 10,000 times as many bits per second as a nervous system on a single “wire”.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'EtherCAT / synaptic bandwidth ratio ~='</span><span class="p">,</span>
+      <span class="n">readable</span><span class="p">(</span><span class="n">EtherCAT_bandwidth</span> <span class="o">/</span> <span class="n">synaptic_bandwidth</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+      <div class="output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EtherCAT / synaptic bandwidth ratio ~= 10000.0 dimensionless
+</code></pre></div>      </div>
+    </div>
+  </div>
+</div>
+
+<h3 id="hypothetical-channel">Hypothetical channel</h3>
+
+<p>Since axons transmit information at 1/10,000th the rate of EtherCAT cables, we compare the geometry and energetics of two hypothetical 10 centimeter-long communication channels:  an animal channel consisting of 10,000 parallel axons and a machine channel consisting of one Ethernet cable.  Referring to the geometric and energetic metrics summarized above, we find that the cross-sectional area and energy consumption are comparable for the hypothetical animal and machine communication channels.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">animal_channel_geometry</span> <span class="o">=</span> <span class="n">axon_diameter</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">synaptic_bandwidth</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">machine_channel_geometry</span> <span class="o">=</span> <span class="n">Ethernet_diameter</span> <span class="o">/</span> <span class="n">EtherCAT_bandwidth</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'animal / machine channel geometry ratio ~='</span><span class="p">,</span>
+      <span class="n">readable</span><span class="p">((</span><span class="n">animal_channel_geometry</span><span class="o">/</span><span class="n">machine_channel_geometry</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">dimensionless</span><span class="p">)))</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+      <div class="output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>animal / machine channel geometry ratio ~= 0.2 dimensionless
+</code></pre></div>      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">animal_channel_energetics</span> <span class="o">=</span> <span class="n">spike_cost_per_bit</span>
+<span class="n">machine_channel_energetics</span> <span class="o">=</span> <span class="n">Ethernet_cost_per_bit</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'animal / machine channel energetics ratio ~='</span><span class="p">,</span>
+      <span class="n">readable</span><span class="p">((</span><span class="n">animal_channel_energetics</span><span class="o">/</span><span class="n">machine_channel_energetics</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">dimensionless</span><span class="p">)))</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+      <div class="output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>animal / machine channel energetics ratio ~= 0.4 dimensionless
+</code></pre></div>      </div>
+    </div>
+  </div>
+</div>
+
+<h2 id="control">Control</h2>
+
+<h3 id="tbd">TBD</h3>
+
+<h2 id="references-cited">References cited</h2>
+
+<ol class="bibliography"><li><span id="Pei2019-rv">Pei, J., Deng, L., Song, S., Zhao, M., Zhang, Y., Wu, S., … Shi, L. (2019). Towards artificial general intelligence with hybrid Tianjic chip
+              architecture. <i>Nature</i>, <i>572</i>(7767), 106–111. https://doi.org/10.1038/s41586-019-1424-8</span></li>
+<li><span id="Perge2012-vm">Perge, J. a, Niven, J. E., Mugnaini, E., Balasubramanian, V., &amp; Sterling, P. (2012). Why Do Axons Differ in Caliber? <i>The Journal of Neuroscience: the Official Journal of the Society
+              for Neuroscience</i>, <i>32</i>(2), 626–638. https://doi.org/10.1523/?JNEUROSCI.4254-11.2012</span></li>
+<li><span id="Faisal2005-qw">Faisal, A. A., White, J. A., &amp; Laughlin, S. B. (2005). Ion-channel noise places limits on the miniaturization of the
+              brain’s wiring. <i>Current Biology: CB</i>, <i>15</i>(12), 1143–1149. https://doi.org/10.1016/j.cub.2005.05.056</span></li>
+<li><span id="MacKay1952-om">MacKay, D. M., &amp; McCulloch, W. S. (1952). The limiting information capacity of a neuronal link. <i>The Bulletin of Mathematical Biophysics</i>, <i>14</i>(2), 127–135. https://doi.org/10.1007/BF02477711</span></li>
+<li><span id="Lennie2003-ob">Lennie, P. (2003). The Cost of Cortical Computation. <i>Current Biology: CB</i>, <i>13</i>(6), 493–497. https://doi.org/10.1016/S0960-9822(03)00135-0</span></li>
+<li><span id="Mahadevan2009-gx">Mahadevan, P., Sharma, P., Banerjee, S., &amp; Ranganathan, P. (2009). A Power Benchmarking Framework for Network Devices. In <i>International Conference on Research in Networking</i> (pp. 795–808). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-642-01399-7_62</span></li>
+<li><span id="More2010-gy">More, H. L., Hutchinson, J. R., Collins, D. F., Weber, D. J., Aung, S. K. H., &amp; Donelan, J. M. (2010). Scaling of sensorimotor control in terrestrial mammals. <i>Proceedings of the Royal Society B: Biological Sciences</i>, <i>277</i>(1700), 3563–3568. https://doi.org/10.1098/rspb.2010.0898</span></li>
+<li><span id="Beckhoff_Automation2018-df">Beckhoff Automation. (2018). <i>EtherCAT System Documentation</i>. Retrieved from https://download.beckhoff.com/download/document/io/ethercat-terminals/ethercatsystem_en.pdf</span></li>
+<li><span id="Borst1999-go">Borst, A., &amp; Theunissen, F. E. F. E. (1999). Information theory and neural coding. <i>Nature Neuroscience</i>, <i>2</i>(11), 947–957. https://doi.org/10.1038/14731</span></li></ol>
+
+
+              <nav class="c-page__nav">
+  
+    
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/sburden/avm/home.html">
+      〈 <span class="u-margin-right-tiny"></span> Home
+    </a>
+  
+
+  
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/sburden/avm/citations.html">
+      Citations <span class="u-margin-right-tiny"></span> 〉
+    </a>
+  
+</nav>
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>
